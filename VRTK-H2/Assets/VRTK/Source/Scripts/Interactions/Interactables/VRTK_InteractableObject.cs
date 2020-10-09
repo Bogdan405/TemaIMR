@@ -6,6 +6,8 @@ namespace VRTK
     using System.Collections.Generic;
     using GrabAttachMechanics;
     using SecondaryControllerGrabActions;
+    using System;
+    using System.Diagnostics;
 
     /// <summary>
     /// Event Payload
