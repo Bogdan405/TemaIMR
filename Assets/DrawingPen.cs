@@ -13,6 +13,7 @@ public class DrawingPen : MonoBehaviour
     private bool lineStarted = false;
     private int linesDrawn = 0;
     public Timer timer;
+    public GameObject pointer;
     void Start()
     {
         init();
@@ -42,7 +43,7 @@ public class DrawingPen : MonoBehaviour
     {
         if (shouldDraw && !timer.isRunning)
         {
-            lastPos = this.transform.position;
+            lastPos = pointer.transform.position;
             if (!lineStarted)
             {
                 linesDrawn +=1;
@@ -53,7 +54,6 @@ public class DrawingPen : MonoBehaviour
             }
             else
             {
-                lastPos = this.transform.position;
                 lineRenderer.positionCount +=1;
                 lineRenderer.SetPosition(lineRenderer.positionCount - 1, lastPos);
             }
